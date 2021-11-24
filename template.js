@@ -21,6 +21,8 @@ let template = `
       "min": -40,
       "max": 40
     }
-  ]
+  ],
+
+  "overlap": false
 
 }`;

@@ -105,6 +105,11 @@ class MapScreen {
           break;
         }
 
+        if (!config.overlap && this.checkCollision(lastPos, newPos)) {
+          validPath = false;
+          break;
+        }
+
         this.mapPositions.push(newPos);
 
         lastVector = v;
@@ -115,6 +120,23 @@ class MapScreen {
 
     console.log(iterationCount);
 
+  }
+
+  checkCollision(v, w) {
+    
+    for (let i = 1; i < this.mapPositions.length - 1; i++) {
+      let t = this.mapPositions[i - 1];
+      let u = this.mapPositions[i];
+
+      let det = (w.x - v.x) * (u.y - t.y) - (u.x - t.x) * (w.y - v.y);
+      if (det != 0) {
+        let lambda = ((u.y - t.y) * (u.x - v.x) + (t.x - u.x) * (u.y - v.y)) / det;
+        let gamma = ((v.y - w.y) * (u.x - v.x) + (w.x - v.x) * (u.y - v.y)) / det;
+        if (0 < lambda && lambda < 1 && 0 < gamma && gamma < 1) return true;
+      }
+    }
+
+    return false;
   }
 
   showPath() {
