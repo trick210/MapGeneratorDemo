@@ -67,7 +67,7 @@ class MapScreen {
     let validPath = false
     let iterationCount = 0;
 
-    while(!validPath) {
+    while(!validPath && iterationCount < 1000000) {
 
       this.mapPositions = [];
 
@@ -117,6 +117,10 @@ class MapScreen {
       }
 
     }
+	
+	if (!validPath) {
+    alert("Path creation failed after 1000000 iterations");
+	}
 
     console.log(iterationCount);
 
