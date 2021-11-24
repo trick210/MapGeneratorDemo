@@ -1,13 +1,26 @@
 let template = `
 {
   "start": {
-    "x": 5,
-    "y": 2
+    "x": 0,
+    "y": 600
   },
 
   "length": {
-    "min": 200,
-    "max": 1000
+    "min": 5000,
+    "max": 5200
 
-  }
+  },
+
+  "segmentLength": {
+    "min": 10,
+    "max": 50
+  },
+
+  "angles": [
+    {
+      "min": -40,
+      "max": 40
+    }
+  ]
+
 }`;
