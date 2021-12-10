@@ -1,28 +1,39 @@
 let template = `
+
 {
-  "start": {
-    "x": 0,
-    "y": 600
-  },
+  "start": [
+    "LEFT",
+    "TOP",
+    "RIGHT",
+    "BOT"
+  ],
 
   "length": {
-    "min": 5000,
-    "max": 5200
+    "min": 4000,
+    "max": 4200
 
   },
 
   "segmentLength": {
-    "min": 10,
-    "max": 50
+    "min": 200,
+    "max": 300
   },
 
   "angles": [
     {
-      "min": -40,
-      "max": 40
+      "min": -70,
+      "max": 70
     }
   ],
 
-  "overlap": false
+  "edgeDistance": 100,
+
+  "pathDistance": 150,
+
+  "pathWidth": 64,
+
+  "overlap": false,
+
+  "splines": true
 
 }`;
